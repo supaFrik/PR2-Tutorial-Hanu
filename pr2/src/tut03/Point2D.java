@@ -1,0 +1,37 @@
+package tut03;
+
+public class Point2D {
+	private double x;
+	private double y;
+	public Point2D(double x, double y) {
+		super();
+		this.x = x;
+		this.y = y;
+	}
+	public double distance(double x, double y) {
+		return Math.sqrt(Math.pow(this.x - x, 2) + Math.pow(this.y - y, 2));
+	}
+	public double distance(Point2D p) {
+		return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
+	}
+	public double getX() {
+		return x;
+	}
+	public double getY() {
+		return y;
+	}
+	@Override
+	public String toString() {
+		return "Point2D [x=" + x + ", y=" + y + "]";
+	}
+	public static void main(String[] args) {
+		Point2D p1 = new Point2D(3.0, 4.0);
+	    Point2D p2 = new Point2D(1.0, 8.0);
+
+	    System.out.println("Point 1: " + p1);
+	    System.out.println("Point 2: " + p2);
+
+	    System.out.printf("Distance between p1 and (0,0): %.2f%n", p1.distance(0, 0));
+	    System.out.printf("Distance between p1 and p2: %.2f%n", p1.distance(p2));
+	}
+}
